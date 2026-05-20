@@ -1,17 +1,23 @@
-
-# É com 'While: True' e 'Break' que se faz laço de repetição para pedir as condições corretas!
+# Loop para repetir o prompt até receber o dado correto.
+# O try/except evita travamentos caso digitem texto.
 
 while True:
     try:
-        numero = int(input("Digite um número inteiro entre 1 e 10: "))
+
+        # Realiza o casting de string (capturada pelo input) para inteiro através
+        # da função int().
+
+        numero_escolhido = int(input("Digite um número inteiro entre 1 e 10: "))
         acumulador_fatorial = 1
 
-        if 1 <= numero <= 10:
-            while (numero >= 1) and (numero <= 10):
-                acumulador_fatorial *= numero
-                numero -= 1
+        # Valida o escopo e calcula o fatorial de forma regressiva.
 
-            print(f"O fatorial é {acumulador_fatorial}")
+        if 1 <= numero_escolhido<= 10:
+            while (numero_escolhido >= 1) and (numero_escolhido <= 10):
+                acumulador_fatorial *= numero_escolhido
+                numero_escolhido-= 1
+
+            print("O fatorial é {}".format(acumulador_fatorial))
             break
         else:
             print("Número inválido! Deve ser entre 1 e 10.")
