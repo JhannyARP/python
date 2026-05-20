@@ -1,21 +1,21 @@
 
+# É com 'While: True' e 'Break' que se faz laço de repetição para pedir as condições corretas!
 
-try:
-    num = int(input("digite um numero inteiro: "))
-    contador = 1
+while True:
+    try:
+        numero = int(input("Digite um número inteiro entre 1 e 10: "))
+        acumulador_fatorial = 1
 
-    while (0 > num) or (10 < num):
+        if 1 <= numero <= 10:
+            while (numero >= 1) and (numero <= 10):
+                acumulador_fatorial *= numero
+                numero -= 1
 
-        if 0 < num < 10:
-
-            while num != 0:
-                contador *= num
-                num -= 1
-
-                print("O fatorial é {}".format(contador))
-
+            print(f"O fatorial é {acumulador_fatorial}")
+            break
         else:
-            print("Digite um numero entre 0 e 10")
+            print("Número inválido! Deve ser entre 1 e 10.")
 
-except:
-    print("Digite o que foi solicitado corretamente.")
+    except:
+        print("Digite um valor valido (numero inteiro).")
+
