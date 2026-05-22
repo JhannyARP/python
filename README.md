@@ -8,7 +8,7 @@ Bem-vindo(a) ao meu repositório de estudos de Python! Este espaço foi criado p
 
 Para facilitar a navegação, o repositório está organizado nas seguintes pastas:
 
-### 1. 🎓 programação-de-computadores
+### 1. 🎓 programacao-de-computadores
 Nesta pasta, encontram-se as atividades práticas, laboratórios e projetos desenvolvidos para as matérias da minha faculdade de IA.
 *   **Foco:** Resolução de problemas acadêmicos, lógica de programação aplicada e fundamentos voltados para dados e Inteligência Artificial.
 
