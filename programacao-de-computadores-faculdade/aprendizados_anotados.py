@@ -38,3 +38,21 @@ for produto in produtos_lista:
     if produto["nome"] == "Mouse Wireless":
         print(produto["preco"])
         break
+
+
+
+
+# -------------> ERRO TRY EXCEPT (LOOP QUE FINALIZA)
+
+#Por que ele não está funcionando como você quer?
+#Repare na ordem em que você colocou as coisas:
+
+# >>>>> O try está fora do while True.
+# >>>>> O while True está dentro do try.
+
+#Quando o usuário digita uma letra em vez de um número (por exemplo, "A" na hora de escolher
+# a opção), o Python tenta converter isso em inteiro na linha do int(input(...)) e quebra
+# disparando um erro de valor (ValueError).
+#Como o while está dentro do try, o Python captura o erro, pula imediatamente para fora
+# do loop direto para o bloco except, printa "Digite um valor válido!" e... o script acaba.
+# O laço de repetição é destruído.
