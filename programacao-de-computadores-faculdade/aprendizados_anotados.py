@@ -62,7 +62,7 @@ for valor in pessoa.values():
 # Imagine que você tem um dicionário com o estoque de uma fruta
 # e a quantidade dela:
 
- estoque = {"maçã": 10, "banana": 20, "laranja": 15}
+estoque = {"maçã": 10, "banana": 20, "laranja": 15}
 
 #Se você quiser saber o total de frutas que tem na loja,
 # você não precisa saber o nome delas (chaves), você só
@@ -130,3 +130,70 @@ for produto in produtos_lista:
 #Como o while está dentro do try, o Python captura o erro, pula imediatamente para fora
 # do loop direto para o bloco except, printa "Digite um valor válido!" e... o script acaba.
 # O laço de repetição é destruído.
+
+
+
+
+# ---------------------> CONJUNTOS
+
+#Operações Matemáticas Clássicas
+#Os conjuntos brilham quando precisamos comparar coleções de dados. Imagine duas turmas:
+turma_a = {"Ana", "Bruno", "Carlos", "Diana"}
+turma_b = {"Ana", "Eduardo", "Felipe", "Diana"}
+
+#União (|): Junta todo mundo de ambos os conjuntos (removendo as repetições).
+
+todos = turma_a | turma_b  # Ana, Bruno, Carlos, Diana, Eduardo, Felipe
+
+#Interseção (&): Pega apenas quem está presente nos dois conjuntos ao mesmo tempo.
+
+comuns = turma_a & turma_b  # Ana, Diana
+
+#Diferença (-): Pega os elementos que estão no primeiro conjunto, mas não estão no segundo.
+
+so_turma_a = turma_a - turma_b  # Bruno, Carlos
+
+#Diferença Simétrica (^): Pega os alunos que são exclusivos de cada turma (quem está em uma
+# ou na outra, mas não nas duas).
+
+exclusivos = turma_a ^ turma_b  # Bruno, Carlos, Eduardo, Felipe
+
+#Imagine dois grupos de amigos:
+
+#Grupo do Futebol: Ana, Bruno, Carlos.
+#Grupo do Videogame: Ana, Diego, Eduardo.
+
+#Se você transformar esses grupos em Conjuntos no Python, você consegue respostas
+# instantâneas para perguntas complexas:
+
+#Interseção (&): Quem joga futebol E joga videogame ao mesmo tempo?
+#O Python olha os dois círculos e te entrega apenas quem está no meio:
+# {"Ana"}.
+
+#União (|): Se eu quiser fazer uma festa e convidar todo mundo dos dois grupos, quantas pessoas vão?
+#O Python junta os dois círculos e remove os repetidos automaticamente:
+# {"Ana", "Bruno", "Carlos", "Diego", "Eduardo"} (A Ana só conta uma vez, afinal, ela é uma pessoa só!).
+
+#Diferença (-): Quem joga futebol, mas NÃO joga videogame?
+#O Python "arranca" a Ana (que joga videogame) do primeiro grupo e te entrega:
+# {"Bruno", "Carlos"}.
+
+#Com Listas: Você teria que fazer um loop por todos os e-mails, criar uma segunda lista
+# e ir checando item por item. Isso deixa o código longo e muito lento se você tiver
+# milhares de e-mails.
+
+#Com Conjuntos: É absurdamente simples e rápido. Para remover as duplicatas de uma lista,
+# basta transformá-la em conjunto:
+
+lista_com_duplicados = ["ana@email.com", "bruno@email.com", "ana@email.com"]
+
+# O set() elimina os repetidos instantaneamente
+lista_limpa = list(set(lista_com_duplicados))
+print(lista_limpa)  # ['bruno@email.com', 'ana@email.com']
+
+
+
+
+
+
+
