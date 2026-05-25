@@ -43,6 +43,9 @@ print(len(frase.strip()))
 frase = 'Curso em Vídeo Python'
 print(frase.replace('Python', 'Android'))
 
+frase = 'Curso em Vídeo Python'
+print(frase.replace('Python', 'Android'))
+
 ## Parei em 35:44
 
 

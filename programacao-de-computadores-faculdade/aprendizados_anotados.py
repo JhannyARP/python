@@ -16,6 +16,80 @@ preco_mouse = produtos_dict["Mouse Wireless"]["preco"]
 
 
 
+
+#--------> DICIONÁRIOS
+#
+# Criando
+pessoa = {"nome": "Ana Silva", "idade": 28}
+
+# Acessando
+print(pessoa["nome"])  # Saída: Ana Silva
+
+# Modificando
+pessoa["idade"] = 29
+
+# Adicionando uma nova chave (basta atribuir um valor a uma chave inédita)
+pessoa["cidade"] = "São Paulo"
+
+pais = pessoa.get("pais", "Brasil") # Se "pais" não existir, retorna "Brasil"
+
+
+# --> Pegando apenas os valores do dicionario:
+
+pessoa = {
+  "nome": "Ana Silva",
+  "idade": 28,
+  "profissao": "Engenheira",
+  "salario": 5500.00
+}
+
+#As Chaves (etiquetas) são:
+# "nome", "idade", "profissao", "salario".
+
+#Os Valores (o conteúdo de cada etiqueta) são:
+# "Ana Silva", 28, "Engenheira", 5500.00.
+
+for valor in pessoa.values():
+    print(valor)
+
+# SAÍDA:
+# Ana Silva
+# 28
+# Engenheira
+# 5500.0
+
+#Quando você usaria isso na vida real?
+# Imagine que você tem um dicionário com o estoque de uma fruta
+# e a quantidade dela:
+
+ estoque = {"maçã": 10, "banana": 20, "laranja": 15}
+
+#Se você quiser saber o total de frutas que tem na loja,
+# você não precisa saber o nome delas (chaves), você só
+# precisa dos números (valores). Você poderia fazer simplesmente:
+
+
+total_de_frutas = sum(estoque.values())
+print(total_de_frutas)  # Vai somar 10 + 20 + 15 = 45
+
+
+# APLICAÇÕES REAIS DE DICIONÁRIO
+
+estoque = {
+ "notebook": {"preco": 3500.00, "quantidade": 5},
+ "mouse": {"preco": 50.00, "quantidade": 25},
+ "teclado": {"preco": 150.00, "quantidade": 12}
+}
+
+# Acessando informações aninhadas
+preco_notebook = estoque["notebook"]["preco"]
+
+# Atualizando quantidade
+estoque["mouse"]["quantidade"] -= 1
+
+
+
+
 # -------> LISTA DE DICIONÁRIOS
 
 #Aqui, os produtos são apenas elementos soltos dentro de um vetor (uma lista organizada por posição numérica 0, 1, 2...).
