@@ -19,19 +19,42 @@ from random import choice
 palavras_sortidas = ["gato", "cachorro", "passarinho"]
 palavra_escolhida = choice(palavras_sortidas)
 
+# ESTRUTURA PARA A PALAVRA MASCARADA (LISTA):
+# Optou-se por uma LISTA vazia porque precisamos manter a ordem exata
+# das letras e permitir elementos duplicados (vários tracinhos '_').
+
 armazenamento_campos_letras = []
+
+# ESTRUTURA PARA AS TENTATIVAS (CONJUNTO / SET):
+# Set utilizado para impedir o acúmulo de duplicatas caso o jogador digite
+# a mesma letra repetidamente, evitando uma contagem indevida para o nosso jogo.
+
 letras_digitadas = set()
+
+# Define o limite numérico de erros permitidos antes do encerramento do jogo.
 
 chances = 8
 
-print(palavra_escolhida)
+# Mede-se o comprimento da palavra sorteada para preencher a lista de
+# lacunas com a quantidade exata de 'caracteres ocultos'.
+
 tamanho_palavra = len(palavra_escolhida)
+
+# O loop 'for' associado ao 'range' garante que adicionaremos
+# exatamente um tracinho '_' para cada letra existente na palavra oculta,
+# organizando e separando cada elemento exato do índice.
 
 for tamanho in range(tamanho_palavra):
     armazenamento_campos_letras.append('_')
 
+# Exibição das lacunas para exibição do tamanho da palavra (ex: ['_', '_', '_', '_'])
 print(armazenamento_campos_letras)
 
+# LOOP PRINCIPAL DO JOGO:
+# Utiliza-se o loop 'while' combinado com o operador lógico 'and',
+#
+# jogo continua rodando dinamicamente ENQUANTO o jogador não adivinhar
+# todas as letras E possuir vidas maiores que zero.
 
 while '_' in armazenamento_campos_letras and chances > 0:
     tentativa = input("Digite uma letra: ")
